@@ -1,14 +1,14 @@
 import { useTasks } from '../TaskContext';
 
 const TaskItem = ({ task }) => {
-  const { alternarTask } = useTasks(); 
+  const { toggleTask } = useTasks(); 
 
   return (
     <li>
       <input 
         type="checkbox" 
         checked={task.completed} 
-        onChange={() => alternarTask(task.id)}
+        onChange={() => toggleTask(task.id)}
       />
       <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
         {task.title}
